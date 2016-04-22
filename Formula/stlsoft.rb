@@ -2,9 +2,9 @@ require 'formula'
 
 class Stlsoft < Formula
   homepage 'http://www.stlsoft.org'
-  url 'http://downloads.sourceforge.net/project/stlsoft/STLSoft%201.9/1.9.121/stlsoft-1.9.121-hdrs.zip'
-  version '1.9.121'
-  sha1 'cafc353de6e8c9da832a6adaa3f1a8f5ed963235'
+  url 'http://downloads.sourceforge.net/project/stlsoft/STLSoft%201.9/1.9.124/stlsoft-1.9.124-hdrs.zip'
+  version '1.9.124'
+  sha1 'e580bcbf6d5530f6587038a959ee96ae820d7eda'
 
   depends_on 'dos2unix' => :build
 
