@@ -1,8 +1,8 @@
 class Fxt < Formula
   desc "Library of low-level algorithms"
   homepage "http://www.jjj.de/fxt/"
-  url "http://www.jjj.de/fxt/fxt-2015.08.31.tgz"
-  sha256 "2fa6551a9b0bf5f1f4836d33ed17fb9b7b99171f28db46cd477209f8f4f3e4a9"
+  url "http://www.jjj.de/fxt/fxt-2016.04.22.tgz"
+  sha256 "e6849384192ceddd0d61b9ca6417e9a885996db4b03464faba7e77eae870c476"
 
   option :universal
   option :cxx11
