@@ -12,7 +12,7 @@ end
 class Jad < Formula
   homepage 'http://www.varaneckas.com/jad/'
   url 'http://www.varaneckas.com/jad/jad158g.mac.intel.zip', :using  => JadDownloadStrategy
-  sha1 '25bf73676eec21d4cf02f110cb7a06d37cb52f16'
+  sha256 '8e9e4ea6c4177acce6d27325a036f10a72c170ed60e48c37c3483335319d07b9'
   version '1.5.8g'
 
   def install
