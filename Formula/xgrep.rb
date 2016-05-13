@@ -1,12 +1,11 @@
 require 'formula'
 
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class Xgrep < Formula
   homepage 'http://wohlberg.net/public/software/xml/xgrep/'
-  url 'http://wohlberg.net/public/software/xml/xgrep/xgrep-0.07.tar.gz'
-  sha1 '406f2d173dee32fc61703429ce1b160c3d88d87d'
+  url 'http://wohlberg.net/public/software/xml/xgrep/xgrep-0.08.tar.gz'
+  sha256 '41894e5b1d0ab53258fb67ddd6b2cecf418c6bc02033c42e8160cc658faad5b7'
+
+  depends_on 'makedepend' => :build
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
