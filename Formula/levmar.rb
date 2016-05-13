@@ -1,16 +1,16 @@
 require 'formula'
 
-class Levmar <Formula
-  url 'http://www.ics.forth.gr/~lourakis/levmar/levmar-2.5.tgz'
-  homepage 'http://www.ics.forth.gr/~lourakis/levmar/'
-  md5 '7ca14d79eda6e985f8355b719ae47d35'
+class Levmar < Formula
+  url 'http://users.ics.forth.gr/~lourakis/levmar/levmar-2.6.tgz'
+  homepage 'http://users.ics.forth.gr/~lourakis/levmar/'
+  sha256 '3bf4ef1ea4475ded5315e8d8fc992a725f2e7940a74ca3b0f9029d9e6e94bad7'
 
   depends_on 'clapack'
 
   def install
-    clapack = Formula.factory('clapack')
+    clapack = Formula['clapack']
     ENV.append "CFLAGS", "-I#{clapack.include}/clapack"
-    ENV.append "LDFLAGS", "-L#{clapack.lib} -L."
+    ENV.append "LDFLAGS", "-L#{clapack.lib}/clapack -L."
     inreplace "Makefile" do |s|
       s.change_make_var! "CC", ENV['CC']
       s.change_make_var! 'CFLAGS', ENV['CFLAGS']
