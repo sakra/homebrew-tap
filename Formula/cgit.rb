@@ -9,7 +9,7 @@ end
 class Cgit < Formula
   homepage 'http://git.zx2c4.com/cgit/'
   url 'http://git.zx2c4.com/cgit/snapshot/cgit-0.9.0.3.zip'
-  sha1 '744903be9985c1fceefdb221795d945fdb6c6d4d'
+  sha256 'a7e02182173f7febc0b7b177f254087df7e0832c9a37a4a30b4f51a14dfd2b5f'
 
   def patches
     # Fix libiconv dependency on Darwin

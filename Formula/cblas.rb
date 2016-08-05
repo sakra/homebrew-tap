@@ -4,7 +4,7 @@ class Cblas <Formula
   url 'http://www.netlib.org/blas/blast-forum/cblas.tgz'
   homepage 'http://www.netlib.org/blas/'
   version '2011-01-20'
-  sha1 'd6970cf52592ef67674a61c78bbd055a4e9d4680'
+  sha256 '0f6354fd67fabd909baf57ced2ef84e962db58fae126e4f41b21dd4fec60a2a3'
 
   depends_on :fortran
   depends_on 'clapack' => :build

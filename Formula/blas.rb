@@ -6,7 +6,7 @@ require 'formula'
 class Blas < Formula
   homepage 'http://www.netlib.org/blas/'
   url 'http://www.netlib.org/blas/blas.tgz'
-  sha1 'a643b737c30a0a5b823e11e33c9d46a605122c61'
+  sha256 'ef7d775d380f255d1902bce374ff7c8a594846454fcaeae552292168af1aca24'
   version '2011-04-19'
 
   depends_on 'gfortran' => :build

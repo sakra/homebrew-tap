@@ -3,7 +3,7 @@ require 'formula'
 class Matio < Formula
   homepage 'http://matio.sourceforge.net/'
   url 'http://downloads.sourceforge.net/project/matio/matio/1.5.0/matio-1.5.0.tar.gz'
-  sha1 '70dbf09984ade6adfb38c1b62ae5585ff7f85e05'
+  sha256 '550dfa642c4ca7ad5ce5a0249264436ced14c72c116aee9fd14e99c7bd8cc72e'
 
   def options
     [

@@ -3,7 +3,7 @@ require 'formula'
 class Atlas <Formula
   url 'http://sourceforge.net/projects/math-atlas/files/Stable/3.10.0/atlas3.10.0.tar.bz2'
   homepage 'http://math-atlas.sourceforge.net/'
-  sha1 '085e8219d01626485079b785309d4d6502ab1ac0'
+  sha256 'a90a2e3463504e3297b56edc13769d766732e82bd8f1de951cfc78444f148465'
 
   def patches
     # Makefile does not handle missing Fortran compiler correctly

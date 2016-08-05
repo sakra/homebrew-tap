@@ -3,7 +3,7 @@ require 'formula'
 class Ntop <Formula
   url 'http://sourceforge.net/projects/ntop/files/ntop/ntop-4.0.1/ntop-4.0.1.tar.gz'
   homepage 'http://www.ntop.org'
-  md5 '22f916327f0e92d8c470aaadcb80d84d'
+  sha256 '5b8d393246e423e434532a4de79fe4f08191b98c451d76a4ede251302fd4f56d'
 
   depends_on 'gdbm'
   depends_on 'rrdtool'
@@ -43,7 +43,7 @@ index bcdd4eb..dc24e06 100644
 @@ -38,155 +38,6 @@ extern char ** environ;
  #include <execinfo.h>
  #endif
- 
+
 -char static_ntop;
 -
 -/*
@@ -194,16 +194,16 @@ index bcdd4eb..dc24e06 100644
 -/* *********************************** */
 -
  static void verifyOptions (void){
- 
+
  #ifdef HAVE_OPENSSL
 diff --git a/plugin.c b/plugin.c
 index a66c382..de5b475 100644
 --- a/plugin.c
 +++ b/plugin.c
 @@ -20,6 +20,8 @@
- 
+
  #include "ntop.h"
- 
+
 +char static_ntop;
 +
  #ifdef MAKE_STATIC_PLUGIN
@@ -215,7 +215,7 @@ index 40a2682..2d2a0ce 100644
 +++ b/prefs.c
 @@ -1479,3 +1479,150 @@ void initUserPrefs(UserPref *pref) {
  }
- 
+
  /* *******************************/
 +
 +/*
@@ -370,8 +370,8 @@ index 46b102c..33198c7 100644
 +++ b/Makefile.am
 @@ -115,7 +115,7 @@ bin_PROGRAMS   = ntop
  EXTRA_PROGRAMS = ntops
- bin_SCRIPTS    = 
- 
+ bin_SCRIPTS    =
+
 -ntop_SOURCES       = main.c admin.c
 +ntop_SOURCES       = main.c
  ntop_DEPENDENCIES  = libntopreport.la libntop.la
@@ -383,6 +383,6 @@ index 46b102c..33198c7 100644
                       traffic.c    vendor.c      version.c      \
 -                     ntop_darwin.c
 +                     ntop_darwin.c admin.c
- 
+
  libntop_la_DEPENDENCIES =  config.h
  libntop_la_LIBADD       = $(BASE_LIBS)
