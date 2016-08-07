@@ -3,7 +3,7 @@ require 'formula'
 class CgitGit < Formula
   homepage 'http://git.zx2c4.com/cgit/'
   url 'http://git.plenz.com/git/snapshot/git-1.7.3.5.tar.gz'
-  sha1 '6e556483ff409241edd793cf79d9052e1f8f1c57'
+  sha256 ''
 end
 
 class Cgit < Formula
