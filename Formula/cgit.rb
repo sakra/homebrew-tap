@@ -2,8 +2,8 @@ require 'formula'
 
 class Cgit < Formula
   homepage 'https://git.zx2c4.com/cgit'
-  url 'https://git.zx2c4.com/cgit/snapshot/cgit-1.0.tar.xz'
-  sha256 'a89754610922f122468c791888ed6309a81fa0f3ae948d118284b673cb40704d'
+  url 'https://git.zx2c4.com/cgit/snapshot/cgit-1.1.tar.xz'
+  sha256 '0889af29be15fc981481caa09579f982b9740fe9fd2860ab87dff286f4635890'
 
   depends_on 'gettext'
   depends_on 'openssl'
