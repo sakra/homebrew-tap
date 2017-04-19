@@ -9,7 +9,7 @@ class Cminpack < Formula
   depends_on "openblas" unless OS.mac?
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", "-DUSE_BLAS=OFF", *std_cmake_args
     system "make", "install"
 
     man3.install Dir["doc/*.3"]
