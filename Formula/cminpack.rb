@@ -9,8 +9,15 @@ class Cminpack < Formula
   depends_on "openblas" unless OS.mac?
 
   def install
-    system "cmake", ".", "-DUSE_BLAS=OFF", *std_cmake_args
-    system "make", "install"
+    mkdir "build_static" do
+      system "cmake", "..", "-DBUILD_SHARED_LIBS=OFF", "-DUSE_BLAS=OFF", *std_cmake_args
+      system "make", "install"
+    end
+
+    mkdir "build_shared" do
+      system "cmake", "..", "-DBUILD_SHARED_LIBS=ON", "-DUSE_BLAS=OFF", *std_cmake_args
+      system "make", "install"
+    end
 
     man3.install Dir["doc/*.3"]
     doc.install Dir["doc/*"]
