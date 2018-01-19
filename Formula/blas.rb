@@ -9,7 +9,7 @@ class Blas < Formula
   sha256 'ef7d775d380f255d1902bce374ff7c8a594846454fcaeae552292168af1aca24'
   version '2011-04-19'
 
-  depends_on 'gfortran' => :build
+  depends_on "gcc" => :build
 
   def options
     [

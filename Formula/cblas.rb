@@ -6,7 +6,7 @@ class Cblas <Formula
   version '2011-01-20'
   sha256 '0f6354fd67fabd909baf57ced2ef84e962db58fae126e4f41b21dd4fec60a2a3'
 
-  depends_on :fortran
+  depends_on "gcc" => :build
   depends_on 'clapack' => :build
 
   def options
