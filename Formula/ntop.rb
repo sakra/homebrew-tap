@@ -1,7 +1,5 @@
-require 'formula'
-
-class Ntop <Formula
-  url 'http://sourceforge.net/projects/ntop/files/ntop/ntop-4.0.1/ntop-4.0.1.tar.gz'
+class Ntop < Formula
+  url 'https://downloads.sourceforge.net/projects/ntop/files/ntop/ntop-4.0.1/ntop-4.0.1.tar.gz'
   homepage 'http://www.ntop.org'
   sha256 '5b8d393246e423e434532a4de79fe4f08191b98c451d76a4ede251302fd4f56d'
 
@@ -13,13 +11,11 @@ class Ntop <Formula
   skip_clean "lib/plugins"
   skip_clean "var/ntop"
 
-  def patches
-    # patches work around dyld missing symbols errors:
-    # upon compilation _static_ntop, _usage and _welcome are moved
-    # from main.c to plugin.c and prefs.c respectively
-    # upon linking admin.c is moved from executable ntop to libntop.dylib
-    DATA
-  end
+  # patches work around dyld missing symbols errors:
+  # upon compilation _static_ntop, _usage and _welcome are moved
+  # from main.c to plugin.c and prefs.c respectively
+  # upon linking admin.c is moved from executable ntop to libntop.dylib
+  patch :DATA
 
   def install
     system "./autogen.sh", "--noconfig"

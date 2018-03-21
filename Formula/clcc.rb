@@ -1,5 +1,3 @@
-require 'formula'
-
 class ClccDownloadStrategy < CurlDownloadStrategy
   def stage
     # need to convert newlines or patch chokes
@@ -9,8 +7,8 @@ class ClccDownloadStrategy < CurlDownloadStrategy
 end
 
 class Clcc < Formula
-  homepage 'http://clcc.sourceforge.net/'
-  url 'http://sourceforge.net/projects/clcc/files/v0.3.0/clcc-0.3.0-25-src.zip',
+  homepage 'https://clcc.sourceforge.io/'
+  url 'https://downloads.sourceforge.net/projects/clcc/files/v0.3.0/clcc-0.3.0-25-src.zip',
       :using => ClccDownloadStrategy
   sha256 'df48fc1d66eb21c41de4eae2f68040a18c0818f8dbfa8071f011c19c538755d3'
 
@@ -18,10 +16,7 @@ class Clcc < Formula
   depends_on 'boost'
   depends_on 'doxygen'
 
-  def patches
-    # fix CMake error upon configure generated (tarball is not an SVN work dir)
-    DATA
-  end
+  patch :DATA
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -40,9 +35,9 @@ index 818dedf..22186ac 100644
 @@ -19,7 +19,7 @@ set(CLCC_VERSION_MINOR	3)
  set(CLCC_VERSION_PATCH	0)
  set(CLCC_VERSION_BUILD	0)	#	Undetermined, set by subversion (if present)
- 
+
 -find_package(Subversion)
 +#find_package(Subversion)
- 
+
  if (Subversion_FOUND)
  	Subversion_WC_INFO(${PROJECT_SOURCE_DIR} clcc)

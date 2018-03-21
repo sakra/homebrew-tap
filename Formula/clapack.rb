@@ -1,22 +1,15 @@
 require 'formula'
 
-class Clapack <Formula
+class Clapack < Formula
   url 'http://www.netlib.org/clapack/clapack-3.2.1.tgz'
   homepage 'http://www.netlib.org/clapack/'
   sha256 '6dc4c382164beec8aaed8fd2acc36ad24232c406eda6db462bd4c41d5e455fac'
 
-  def patches; DATA; end
-
-  def options
-    [
-      ["--universal", "Build universal binaries."]
-    ]
-  end
+  patch :DATA
 
   def install
     # makefiles do not work in parallel mode
     ENV.deparallelize
-    ENV.universal_binary if ARGV.include? "--universal"
     ENV.append 'CFLAGS', "-I$(TOPDIR)/INCLUDE -DNO_BLAS_WRAP"
     cp 'make.inc.example', 'make.inc'
     inreplace "make.inc" do |s|

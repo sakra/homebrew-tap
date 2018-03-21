@@ -16,7 +16,7 @@ class Cgit < Formula
     ENV.append 'CFLAGS', "-I#{Formula["openssl"].opt_include}"
     ENV.append 'LDFLAGS', "-L#{Formula["openssl"].opt_lib}"
     inreplace "Makefile" do |s|
-      s.change_make_var! "prefix", "#{prefix}"
+      s.change_make_var! "prefix", prefix
       s.change_make_var! "CGIT_CONFIG", "#{etc}/cgitrc"
       s.change_make_var! "CACHE_ROOT", "#{var}/cache/cgit"
       s.change_make_var! "CGIT_SCRIPT_NAME", "cgit.cgi"
@@ -24,11 +24,11 @@ class Cgit < Formula
       s.change_make_var! "filterdir", "#{prefix}/filters"
     end
     inreplace "cgitrc.5.txt" do |s|
-      s.gsub! "/etc", "#{etc}"
-      s.gsub! "/var", "#{var}"
+      s.gsub! "/etc", etc
+      s.gsub! "/var", var
     end
     inreplace "README" do |s|
-      s.gsub! "/etc", "#{etc}"
+      s.gsub! "/etc", etc
       s.gsub! "/var/www/htdocs/cgit", " #{opt_prefix}/cgi"
     end
     system "make get-git"

@@ -1,6 +1,4 @@
-require 'formula'
-
-class Cblas <Formula
+class Cblas < Formula
   url 'http://www.netlib.org/blas/blast-forum/cblas.tgz'
   homepage 'http://www.netlib.org/blas/'
   version '2011-01-20'
@@ -9,16 +7,9 @@ class Cblas <Formula
   depends_on "gcc" => :build
   depends_on 'clapack' => :build
 
-  def options
-    [
-      ["--universal", "Build universal binaries."]
-    ]
-  end
-
   def install
     # makefiles do not work in parallel mode
     ENV.deparallelize
-    ENV.universal_binary if ARGV.include? "--universal"
     ENV.append 'CFLAGS', "-DADD_"
     cp 'Makefile.LINUX', 'Makefile.in'
     inreplace "Makefile.in" do |s|

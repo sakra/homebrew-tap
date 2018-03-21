@@ -1,15 +1,13 @@
 class Fxt < Formula
   desc "Library of low-level algorithms"
-  homepage "http://www.jjj.de/fxt/"
-  url "http://www.jjj.de/fxt/fxt-2016.04.22.tgz"
-  sha256 "e6849384192ceddd0d61b9ca6417e9a885996db4b03464faba7e77eae870c476"
+  homepage "https://www.jjj.de/fxt/"
+  url "https://www.jjj.de/fxt/fxt-2018.02.15.tar.gz"
+  sha256 "17a4e22556203d0b3f08a0f762d91b4dcbc8ff2b91262c0b85f5de6c6e489e0b"
 
-  option :universal
   option :cxx11
 
   def install
     ENV.deparallelize
-    ENV.universal_binary if build.universal?
     ENV.O2
     ENV.cxx11 if build.cxx11?
     lib.mkdir

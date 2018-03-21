@@ -1,19 +1,15 @@
 require 'formula'
 
-class Libdivide <Formula
-  head 'http://svn.libdivide.com/libdivide/trunk/', :using => :svn
+class Libdivide < Formula
+  desc "libdivide - optimizing integer division"
   homepage 'http://libdivide.com/'
+  url "https://github.com/ridiculousfish/libdivide/archive/v1.0.tar.gz"
+  sha256 "a34693b9b4807d79dfde047d9279a798c1ff36603e257d17f17aea25d06aa2bf"
+
+  depends_on "cmake" => :build
 
   def install
-    inreplace "Makefile" do |s|
-      s.change_make_var! 'CC', ENV['CC']
-      s.change_make_var! 'CPP', ENV['CXX']
-      s.change_make_var! 'LINKFLAGS', ENV['LDFLAGS']
-    end
-    system "make release"
-    system "make benchmark"
-    include.install "libdivide.h"
-    bin.install "tester" => "libdivide_tester"
-    bin.install "benchmark" => "libdivide_benchmark"
+    system "cmake", ".", *std_cmake_args
+    system "make", "install"
   end
 end
