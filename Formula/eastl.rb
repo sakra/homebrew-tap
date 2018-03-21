@@ -1,8 +1,8 @@
 class Eastl < Formula
   desc "Electronic Arts Standard Template Library"
   homepage "https://github.com/electronicarts/EASTL"
-  url "https://github.com/electronicarts/EASTL/archive/3.04.00.tar.gz"
-  sha256 "3f37fbadd34d35c4260fafab8ff9c0e9e3ebffba7f6d6dbd4f43d02aa56e27b6"
+  url "https://github.com/electronicarts/EASTL/archive/3.08.00.tar.gz"
+  sha256 "14f89bdeb0b0ed316408572f7250ce80710f32e42ec4fd1e550f43bb2cf74f90"
 
   depends_on "cmake" => :build
 
