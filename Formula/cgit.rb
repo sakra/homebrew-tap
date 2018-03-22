@@ -36,7 +36,7 @@ class Cgit < Formula
     system "make install"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     The cgit CGI executable is #{opt_prefix}/cgi/cgit.cgi
 
     The default runtime configuration file is #{etc}/cgitrc
