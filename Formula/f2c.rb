@@ -19,7 +19,7 @@ class F2c < Formula
     cp 'makefile.u', 'makefile'
     system "make"
     bin.install 'f2c'
-    man1.install 'f2c.1'
+    man1.install "f2c.1t" => "f2c.1"
     resource("lib").stage do
       cp 'makefile.u', 'makefile'
       make "f2c.h"
