@@ -11,7 +11,7 @@ class Cpprestsdk < Formula
 
   def install
     system "cmake", "-DBUILD_SAMPLES=OFF", "-DBUILD_TESTS=OFF", "-DBUILD_SHARED_LIBS=OFF",
-      "-DCPPREST_EXCLUDE_WEBSOCKETS=ON", "-DWERROR=OFF" "Release", *std_cmake_args
+      "-DCPPREST_EXCLUDE_WEBSOCKETS=ON", "-DWERROR=OFF", *std_cmake_args
     system "make", "install"
   end
 
