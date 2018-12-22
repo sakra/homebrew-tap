@@ -3,7 +3,7 @@ class F2c < Formula
   homepage "http://www.netlib.org/f2c/"
   url "http://www.netlib.org/f2c/src.tgz"
   version "201601021"
-  sha256 "7054ff0f6b3718586911521a368fa89976c33d18add2403d811446ec73a16d2e"
+  sha256 "791836946719aca39a5fb0f13db0b891059af220595fd516b509c1c3eaaa3d5e"
 
   resource "lib" do
     url "http://www.netlib.org/f2c/libf2c.zip"
