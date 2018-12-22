@@ -1,7 +1,7 @@
 class Nvwa < Formula
-  url 'https://downloads.sourceforge.net/projects/nvwa/files/nvwa/1.0/nvwa-1.0.tar.gz'
-  homepage 'https://nvwa.sourceforge.io/'
-  sha256 '5b2b5963ced715011c269291041b80c6edfd42188f582a0cf294cdff4b94f605'
+  url 'https://github.com/adah1972/nvwa/archive/Rel_1_0.tar.gz'
+  homepage 'https://github.com/adah1972/nvwa'
+  sha256 'ee802e1e6df821c771d5b5c6b8a00138e58d50f57a2edaabcdf978eb10a09d35'
 
   def install
     Dir.chdir "nvwa" do
