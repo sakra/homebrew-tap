@@ -4,7 +4,7 @@ class JadDownloadStrategy < CurlDownloadStrategy
   def stage
     # the JAD tarball contains odd parent directory references, which unzip does not handle by default
     # -j -d forces all files to be extracted in the directory 'JAD'
-    safe_system '/usr/bin/unzip', '-j', '-d', 'JAD', @tarball_path
+    safe_system '/usr/bin/unzip', '-j', '-d', 'JAD', cached_location
     chdir
   end
 end
