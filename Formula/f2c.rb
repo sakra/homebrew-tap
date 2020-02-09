@@ -3,7 +3,7 @@ class F2c < Formula
   homepage "http://www.netlib.org/f2c/"
   url "http://www.netlib.org/f2c/src.tgz"
   version "201601021"
-  sha256 "791836946719aca39a5fb0f13db0b891059af220595fd516b509c1c3eaaa3d5e"
+  sha256 "ae76b86c5ce887ad508a761509a762adf5ccb8d9ea0c40901264aa1b994878db"
 
   resource "lib" do
     url "http://www.netlib.org/f2c/libf2c.zip"
@@ -22,7 +22,7 @@ class F2c < Formula
     man1.install "f2c.1t" => "f2c.1"
     resource("lib").stage do
       cp 'makefile.u', 'makefile'
-      make "f2c.h"
+      system "make f2c.h"
       system "make"
       include.install("f2c.h")
       lib.install("libf2c.a")
