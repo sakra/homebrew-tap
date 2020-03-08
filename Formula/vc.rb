@@ -1,8 +1,8 @@
 class Vc < Formula
   desc "SIMD Vector Classes for C++"
   homepage "https://github.com/VcDevel"
-  url "https://github.com/VcDevel/Vc/releases/download/1.3.3/Vc-1.3.3.tar.gz"
-  sha256 "08c629d2e14bfb8e4f1a10f09535e4a3c755292503c971ab46637d2986bdb4fe"
+  url "https://github.com/VcDevel/Vc/releases/download/1.4.1/Vc-1.4.1.tar.gz"
+  sha256 "68e609a735326dc3625e98bd85258e1329fb2a26ce17f32c432723b750a4119f"
 
   depends_on "cmake" => :build
 
