@@ -1,11 +1,12 @@
 class Ntop < Formula
-  url 'https://downloads.sourceforge.net/projects/ntop/files/ntop/ntop-4.0.1/ntop-4.0.1.tar.gz'
-  homepage 'http://www.ntop.org'
-  sha256 '5b8d393246e423e434532a4de79fe4f08191b98c451d76a4ede251302fd4f56d'
+  desc "High-speed web-based traffic analysis"
+  homepage "http://www.ntop.org"
+  url "https://downloads.sourceforge.net/projects/ntop/files/ntop/ntop-4.0.1/ntop-4.0.1.tar.gz"
+  sha256 "5b8d393246e423e434532a4de79fe4f08191b98c451d76a4ede251302fd4f56d"
 
-  depends_on 'gdbm'
-  depends_on 'rrdtool'
-  depends_on 'geoip'
+  depends_on "gdbm"
+  depends_on "geoip"
+  depends_on "rrdtool"
 
   # ntop aborts with an error upon startup if these empty directories are stripped
   skip_clean "lib/plugins"
@@ -20,10 +21,10 @@ class Ntop < Formula
   def install
     system "./autogen.sh", "--noconfig"
     # override default locale /usr/lib/locale
-    ENV['LOCALEDIR'] = '/usr/share/locale/'
-    # don't add /opt on Mac OS X
-    inreplace 'configure', '-L/opt/local/lib', ""
-    inreplace 'configure', '-I/opt/local/include', ""
+    ENV["LOCALEDIR"] = "/usr/share/locale/"
+    # don"t add /opt on Mac OS X
+    inreplace "configure", "-L/opt/local/lib", ""
+    inreplace "configure", "-I/opt/local/include", ""
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make"
@@ -133,12 +134,12 @@ index bcdd4eb..dc24e06 100644
 -  fprintf(fp, "    [-K             | --enable-debug]                     %sEnable debug mode\n", newLine);
 -#ifdef MAKE_WITH_SYSLOG
 -  fprintf(fp, "    [-L]                                                  %sDo logging via syslog\n", newLine);
--  fprintf(fp, "    [               | --use-syslog=<facility>]            %sDo logging via syslog, facility ('=' is REQUIRED)\n",
+-  fprintf(fp, "    [               | --use-syslog=<facility>]            %sDo logging via syslog, facility ("=" is REQUIRED)\n",
 -	  newLine);
 -#endif /* MAKE_WITH_SYSLOG */
 -#endif
 -
--  fprintf(fp, "    [-M             | --no-interface-merge]               %sDon't merge network interfaces (see man page)\n",
+-  fprintf(fp, "    [-M             | --no-interface-merge]               %sDon"t merge network interfaces (see man page)\n",
 -	  newLine);
 -#ifdef ENABLE_FC
 -  fprintf(fp, "    [-N             | --wwn-map]                          %sMap file providing map of WWN to FCID/VSAN\n", newLine);
@@ -155,12 +156,12 @@ index bcdd4eb..dc24e06 100644
 -
 -  fprintf(fp, "    [--disable-instantsessionpurge]                       %sDisable instant FIN session purge\n", newLine);
 -  fprintf(fp, "    [--disable-mutexextrainfo]                            %sDisable extra mutex info\n", newLine);
--  fprintf(fp, "    [--disable-stopcap]                                   %sCapture packets even if there's no memory left\n", newLine);
+-  fprintf(fp, "    [--disable-stopcap]                                   %sCapture packets even if there"s no memory left\n", newLine);
 -
 -#ifdef ENABLE_FC
 -  fprintf(fp, "    [--fc-only]                                           %sDisplay only Fibre Channel statistics\n", newLine);
 -  fprintf(fp, "    [--no-fc]                                             %sDisable processing & Display of Fibre Channel\n", newLine);
--  fprintf(fp, "    [--no-invalid-lun]                                    %sDon't display Invalid LUN information\n", newLine);
+-  fprintf(fp, "    [--no-invalid-lun]                                    %sDon"t display Invalid LUN information\n", newLine);
 -#endif
 -
 -  fprintf(fp, "    [--instance <name>]                                   %sSet log name for this ntop instance\n", newLine);
@@ -305,12 +306,12 @@ index 40a2682..2d2a0ce 100644
 +  fprintf(fp, "    [-K             | --enable-debug]                     %sEnable debug mode\n", newLine);
 +#ifdef MAKE_WITH_SYSLOG
 +  fprintf(fp, "    [-L]                                                  %sDo logging via syslog\n", newLine);
-+  fprintf(fp, "    [               | --use-syslog=<facility>]            %sDo logging via syslog, facility ('=' is REQUIRED)\n",
++  fprintf(fp, "    [               | --use-syslog=<facility>]            %sDo logging via syslog, facility ("=" is REQUIRED)\n",
 +	  newLine);
 +#endif /* MAKE_WITH_SYSLOG */
 +#endif
 +
-+  fprintf(fp, "    [-M             | --no-interface-merge]               %sDon't merge network interfaces (see man page)\n",
++  fprintf(fp, "    [-M             | --no-interface-merge]               %sDon"t merge network interfaces (see man page)\n",
 +	  newLine);
 +#ifdef ENABLE_FC
 +  fprintf(fp, "    [-N             | --wwn-map]                          %sMap file providing map of WWN to FCID/VSAN\n", newLine);
@@ -327,12 +328,12 @@ index 40a2682..2d2a0ce 100644
 +
 +  fprintf(fp, "    [--disable-instantsessionpurge]                       %sDisable instant FIN session purge\n", newLine);
 +  fprintf(fp, "    [--disable-mutexextrainfo]                            %sDisable extra mutex info\n", newLine);
-+  fprintf(fp, "    [--disable-stopcap]                                   %sCapture packets even if there's no memory left\n", newLine);
++  fprintf(fp, "    [--disable-stopcap]                                   %sCapture packets even if there"s no memory left\n", newLine);
 +
 +#ifdef ENABLE_FC
 +  fprintf(fp, "    [--fc-only]                                           %sDisplay only Fibre Channel statistics\n", newLine);
 +  fprintf(fp, "    [--no-fc]                                             %sDisable processing & Display of Fibre Channel\n", newLine);
-+  fprintf(fp, "    [--no-invalid-lun]                                    %sDon't display Invalid LUN information\n", newLine);
++  fprintf(fp, "    [--no-invalid-lun]                                    %sDon"t display Invalid LUN information\n", newLine);
 +#endif
 +
 +  fprintf(fp, "    [--instance <name>]                                   %sSet log name for this ntop instance\n", newLine);

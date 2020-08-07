@@ -9,9 +9,8 @@ class Objconv < Formula
     system "unzip", "source.zip", "-d", "source"
     cd "source" do
       system "bash", "build.sh"
-      bin.install 'objconv'
+      bin.install "objconv"
     end
-    doc.install 'objconv-instructions.pdf'
+    doc.install "objconv-instructions.pdf"
   end
-
 end

@@ -12,5 +12,4 @@ class Vc < Formula
       system "make", "install"
     end
   end
-
 end

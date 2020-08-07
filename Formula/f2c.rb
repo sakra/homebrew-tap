@@ -16,20 +16,19 @@ class F2c < Formula
   end
 
   def install
-    cp 'makefile.u', 'makefile'
+    cp "makefile.u", "makefile"
     system "make"
-    bin.install 'f2c'
+    bin.install "f2c"
     man1.install "f2c.1t" => "f2c.1"
     resource("lib").stage do
-      cp 'makefile.u', 'makefile'
+      cp "makefile.u", "makefile"
       system "make f2c.h"
       system "make"
       include.install("f2c.h")
       lib.install("libf2c.a")
     end
     resource("manual").stage do
-      doc.install 'f2c.pdf'
+      doc.install "f2c.pdf"
     end
   end
-
 end

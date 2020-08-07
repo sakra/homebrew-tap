@@ -3,7 +3,7 @@ class Cpprestsdk < Formula
   homepage "https://github.com/Microsoft/cpprestsdk"
   url "https://github.com/Microsoft/cpprestsdk/archive/v2.10.12.tar.gz"
   sha256 "c7c2a5deb4cad036b974e9b7f2ba2e3ae829312894ddfca2fae3a11980fef63e"
-  head "https://github.com/Microsoft/cpprestsdk.git", :branch => "development"
+  head "https://github.com/Microsoft/cpprestsdk.git", branch: "development"
 
   depends_on "cmake" => :build
   depends_on "boost"
@@ -14,5 +14,4 @@ class Cpprestsdk < Formula
       "-DCPPREST_EXCLUDE_WEBSOCKETS=ON", "-DWERROR=OFF", *std_cmake_args
     system "make", "install"
   end
-
 end

@@ -12,7 +12,10 @@ class Fxt < Formula
     ENV.cxx11
     lib.mkdir
     include.mkdir
-    system "make", "install", "PREFIX=#{prefix}", "CXXFLAGS=#{ENV.cxxflags}", "CXX=#{ENV.cxx}", "FXT_INSTALL=/usr/bin/install"
+    system "make", "install",
+      "PREFIX=#{prefix}",
+      "CXXFLAGS=#{ENV.cxxflags}",
+      "CXX=#{ENV.cxx}",
+      "FXT_INSTALL=/usr/bin/install"
   end
-
 end

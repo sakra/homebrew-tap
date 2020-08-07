@@ -10,10 +10,9 @@ class Kcov < Formula
 
   def install
     ENV.append "CXXFLAGS", "-O2"
-    ENV.append 'CXXFLAGS', "-I#{Formula["binutils"].opt_include}"
-    ENV.append 'LDFLAGS', "-L#{Formula["binutils"].opt_lib}"
+    ENV.append "CXXFLAGS", "-I#{Formula["binutils"].opt_include}"
+    ENV.append "LDFLAGS", "-L#{Formula["binutils"].opt_lib}"
     system "cmake", ".", *std_cmake_args
     system "make", "install"
   end
-
 end

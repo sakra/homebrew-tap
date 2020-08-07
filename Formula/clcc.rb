@@ -1,20 +1,21 @@
 class ClccDownloadStrategy < CurlDownloadStrategy
   def stage
     # need to convert newlines or patch chokes
-    safe_system '/usr/bin/unzip', '-aaqq', @tarball_path
+    safe_system "/usr/bin/unzip", "-aaqq", @tarball_path
     chdir
   end
 end
 
 class Clcc < Formula
-  homepage 'https://clcc.sourceforge.io/'
-  url 'https://downloads.sourceforge.net/projects/clcc/files/v0.3.0/clcc-0.3.0-25-src.zip',
-      :using => ClccDownloadStrategy
-  sha256 'df48fc1d66eb21c41de4eae2f68040a18c0818f8dbfa8071f011c19c538755d3'
+  desc "OpenCL kernel Compiler"
+  homepage "https://clcc.sourceforge.io/"
+  url "https://downloads.sourceforge.net/projects/clcc/files/v0.3.0/clcc-0.3.0-25-src.zip",
+      using: ClccDownloadStrategy
+  sha256 "df48fc1d66eb21c41de4eae2f68040a18c0818f8dbfa8071f011c19c538755d3"
 
-  depends_on 'cmake' => :build
-  depends_on 'boost'
-  depends_on 'doxygen'
+  depends_on "cmake" => :build
+  depends_on "boost"
+  depends_on "doxygen"
 
   patch :DATA
 
@@ -24,7 +25,6 @@ class Clcc < Formula
     system "make clcc_doc"
     system "make install"
   end
-
 end
 
 __END__
