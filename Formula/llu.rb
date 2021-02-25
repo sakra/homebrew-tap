@@ -1,8 +1,8 @@
 class Llu < Formula
   desc "Modern C++ wrapper over Wolfram LibraryLink and WSTP"
   homepage "https://wolframresearch.github.io/LibraryLinkUtilities"
-  url "https://github.com/WolframResearch/LibraryLinkUtilities/archive/v3.0.1.tar.gz"
-  sha256 "1bd66ae3996e86dca4427bf6f9abb46092dc48d502416b52da30b962e62ed742"
+  url "https://github.com/WolframResearch/LibraryLinkUtilities/archive/v3.1.0.tar.gz"
+  sha256 "8cd83f8fd471452abaf0870a771ebe19a9bbdafe1b40191ee18de77d9d1c5afd"
   license "MIT"
 
   depends_on "cmake" => :build
